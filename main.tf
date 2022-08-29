@@ -11,7 +11,7 @@ data "template_cloudinit_config" "config" {
   base64_encode = false
 
   part {
-    content      = templatefile("cloud-init.tftpl", { token = netskope_publishers.Publisher.token })
+    content      = templatefile("${path.module}/cloud-init.tftpl", { token = netskope_publishers.Publisher.token })
   }
 }
 
