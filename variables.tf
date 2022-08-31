@@ -24,4 +24,19 @@ variable "network_interface" {
   type        = string
 }
 
+variable "block_project_ssh_keys" {
+  description = "Block Project SSH Keys"
+  default     = true
+  type        = bool
+}
+
+variable "associate_public_ip_address" {
+  description = "Publisher Assigned Public IP or Not"
+  type        = bool
+  default     = true
+}
+
+
+
+
 

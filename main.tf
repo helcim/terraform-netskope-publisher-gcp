@@ -24,20 +24,26 @@ resource "google_compute_instance" "NPAPublisher" {
   tags         = ["ssh"]
 
   metadata = {
-    user-data = "${data.template_cloudinit_config.config.rendered}"
+    user-data = "${data.template_cloudinit_config.config.rendered}",
+    block-project-ssh-keys = "${var.block_project_ssh_keys}"
   }
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2004-lts"
     }
+
   }
 
   network_interface {
     network = var.network_interface
 
-    access_config {
-      # Ephemeral External IP address
+    dynamic "access_config" {
+       for_each = var.associate_public_ip_address == false ? [] : [1]
+       content {
+          // access_config
+       }
     }
   }
 }
+
 

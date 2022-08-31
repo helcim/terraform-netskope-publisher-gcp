@@ -64,6 +64,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | Publisher Assigned Public IP or Not | `bool` | `true` | no |
+| <a name="input_block_project_ssh_keys"></a> [block\_project\_ssh\_keys](#input\_block\_project\_ssh\_keys) | Block Project SSH Keys | `bool` | `true` | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | GCP Machine Type - e2-medium is the reccomended instance size. | `string` | `"e2-medium"` | no |
 | <a name="input_network_interface"></a> [network\_interface](#input\_network\_interface) | GCP Network Interface | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | GCP Project ID | `string` | n/a | yes |
