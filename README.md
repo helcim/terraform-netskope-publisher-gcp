@@ -4,10 +4,13 @@ A Terraform Module that creates Netskope Publishers in GCP.
 ## Usage
 
 ### Single Netskope Publisher
+
+module "publisher-aws" {
+
 ```hcl
 module "publisher_gcp" {
-  source  = "../terraform-netskope-publisher-gcp/"
-
+  source  = "netskopeoss/publisher-gcp/netskope"
+  
   publisher_name        = var.publisher_name
   zone                  = var.zone
   network_interface     = var.network_interface
@@ -19,7 +22,7 @@ module "publisher_gcp" {
 ### Multiple Netskope Publishers
 ```hcl
 module "publisher_gcp" {
-  source  = "../terraform-netskope-publisher-gcp/"
+  source  = "netskopeoss/publisher-gcp/netskope"
 
   for_each = toset(["01", "02", "03"])
 
