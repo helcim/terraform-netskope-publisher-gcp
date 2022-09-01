@@ -25,7 +25,8 @@ resource "google_compute_instance" "NPAPublisher" {
 
   metadata = {
     user-data = "${data.template_cloudinit_config.config.rendered}",
-    block-project-ssh-keys = "${var.block_project_ssh_keys}"
+    block-project-ssh-keys = "${var.block_project_ssh_keys}",
+    ssh-keys  = "${var.ssh_user}:${var.public_key}"
   }
   boot_disk {
     initialize_params {

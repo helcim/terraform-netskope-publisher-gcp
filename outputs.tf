@@ -15,7 +15,7 @@ output "publisher_nat_ip" {
 }
 
 output "publisher_internal_ip" {
-  description = "Public IP of the Publisher"
+  description = "Internal IP of the Publisher"
   value       = "${google_compute_instance.NPAPublisher.network_interface.0.network_ip }"
 }
 

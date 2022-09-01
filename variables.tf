@@ -36,6 +36,18 @@ variable "associate_public_ip_address" {
   default     = true
 }
 
+variable "ssh_user" {
+  description = "SSH User"
+  type        = string
+  default     = "ubuntu"
+}
+
+variable "public_key" {
+    description = "Publil Key String"
+    type =      = string
+    default     = "AAAABBBBCCCC.."
+  
+}
 
 
 
