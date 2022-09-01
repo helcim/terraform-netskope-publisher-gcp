@@ -15,7 +15,7 @@ variable "machine_type" {
 }
 
 variable "zone" {
-  description = "GCP Zne"
+  description = "GCP Zone"
   type        = string
 }
 

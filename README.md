@@ -34,7 +34,6 @@ module "publisher_gcp" {
 }
 ```
 
-
 ## Requirements
 
 | Name | Version |
@@ -72,12 +71,16 @@ No modules.
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | GCP Machine Type - e2-medium is the reccomended instance size. | `string` | `"e2-medium"` | no |
 | <a name="input_network_interface"></a> [network\_interface](#input\_network\_interface) | GCP Network Interface | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | GCP Project ID | `string` | n/a | yes |
+| <a name="input_public_key"></a> [public\_key](#input\_public\_key) | Public Key String | `string` | `"AAAABBBBCCCC.."` | no |
 | <a name="input_publisher_name"></a> [publisher\_name](#input\_publisher\_name) | Netskope Publisher Name | `string` | n/a | yes |
-| <a name="input_zone"></a> [zone](#input\_zone) | GCP Zne | `string` | n/a | yes |
+| <a name="input_ssh_user"></a> [ssh\_user](#input\_ssh\_user) | SSH User | `string` | `"ubuntu"` | no |
+| <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| <a name="output_publisher_internal_ip"></a> [publisher\_internal\_ip](#output\_publisher\_internal\_ip) | Internal IP of the Publisher |
 | <a name="output_publisher_name"></a> [publisher\_name](#output\_publisher\_name) | Name of the Publisher |
-| <a name="output_publisher_token"></a> [publisher\_token](#output\_publisher\_token) | Public IP of the Publisher |
+| <a name="output_publisher_nat_ip"></a> [publisher\_nat\_ip](#output\_publisher\_nat\_ip) | Public IP of the Publisher |
+| <a name="output_publisher_token"></a> [publisher\_token](#output\_publisher\_token) | Publisher Token |
