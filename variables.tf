@@ -43,8 +43,8 @@ variable "ssh_user" {
 }
 
 variable "public_key" {
-    description = "Publil Key String"
-    type =      = string
+    description = "Public Key String"
+    type        = string
     default     = "AAAABBBBCCCC.."
   
 }
