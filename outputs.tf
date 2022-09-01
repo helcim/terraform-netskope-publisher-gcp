@@ -5,6 +5,11 @@ output "publisher_name" {
 }
 
 output "publisher_token" {
-  description = "Public IP of the Publisher"
+  description = "Publisher Token"
   value       = netskope_publishers.Publisher.token
+}
+
+output "publisher_nat_ip" {
+  description = "Public IP of the Publisher"
+  value       = google_compute_instance.NPAPublisher.access_config.nat_ip
 }
