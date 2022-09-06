@@ -5,8 +5,6 @@ A Terraform Module that creates Netskope Publishers in GCP.
 
 ### Single Netskope Publisher
 
-module "publisher-aws" {
-
 ```hcl
 module "publisher_gcp" {
   source  = "netskopeoss/publisher-gcp/netskope"
