@@ -6,12 +6,20 @@ resource "netskope_publishers" "Publisher" {
 }
 
 //Create Cloud-Init Config with Publisher Token
+data "template_file" "script" {
+  template = "${file("${path.module}/cloud-init.tftpl")}"
+
+  vars = {
+    token = "${netskope_publishers.Publisher.token}"
+  }
+}
+
 data "template_cloudinit_config" "config" {
   gzip          = false
   base64_encode = false
 
   part {
-    content      = templatefile("${path.module}/cloud-init.tftpl", { token = netskope_publishers.Publisher.token })
+    content = "${data.template_file.script.rendered}"
   }
 }
 
